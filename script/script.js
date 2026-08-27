@@ -30,17 +30,17 @@ const discoverTl = gsap.timeline({
 })
 
 discoverTl.to(".slideText1", {
-    y: 200
+    y: 250
 })
 
 discoverTl.to(".slideText2", {
-    y: 200
+    y: 250
 })
 
 discoverTl.to(".slideText3", {
-    y: 200
+    y: 250
 })
 
 discoverTl.to(".slideText4", {
-    y: 200
+    y: 250
 })
