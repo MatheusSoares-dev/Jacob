@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-font: "Raleway", sans-serif;
+    --bg-primary-color: #11100e;
+    --color-primary: #e8e2da;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--primary-font);
+    background-color: var(--bg-primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.capa-img {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/cover-imgh.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Estilizacao cabecalho site */
+
+.is--nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-primary-color);
+}
+
+#site-cabeca {
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+    color: ghostwhite;
+    background-color: #11100e8e ;
+    backdrop-filter: blur(20px);
+
+    .site-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        margin: 0 2rem;
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+
+            li a {
+                color: var(--color-primary);
+                text-transform: uppercase;
+                font-size: 1.6vw;
+                letter-spacing: -1px;
+                font-weight: 500;
+
+                &:hover {
+                    color: #8c8c8c;
+                }
+            }
+        }
+
+        .site-titulo {
+            font-size: 1.8vw;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--color-primary);
+            mix-blend-mode: difference
+        }
+
+        .copy-right {
+            text-transform: uppercase;
+            font-size: 1.3vw;
+            font-weight: 500;
+        }
+    }
+}
+
+/* Estilizacao main */
+
+#site-main {
+
+    /* Sessao descoberta */
+    #descoberta {
+        display: flex;
+        justify-content: center;
+
+        .conteiner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 8.79rem;
+            text-align: center;
+
+            .slide>h1 {
+                display: block;
+                font-size: 13.8vw;
+                font-weight: 700;
+                color: var(--color-primary);
+                letter-spacing: -10px;
+                line-height: .8;
+
+                &.slide-light {
+                    font-weight: 300;
+                    font-style: italic;
+                }
+            }
+
+        }
+    }
+}
