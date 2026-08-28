@@ -7,16 +7,28 @@
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: "Bonny";
+    src: url(/font/bonny/Bonny_Complete/Fonts/WEB/fonts/Bonny-Thin.woff2);
+}
+
 :root {
     --primary-font: "Raleway", sans-serif;
+    --second-font: "Bonny";
     --bg-primary-color: #11100e;
-    --color-primary: #e8e2da;
+    --color-primary: #cfc9c0;
+}
+
+.dark-theme {
+    --color-primary: #11100e;
+    --bg-primary-color: #cfc9c0;
 }
 
 body {
     height: 100vh;
     font-family: var(--primary-font);
     background-color: var(--bg-primary-color);
+    transition: all 1s;
 }
 
 a {
@@ -48,7 +60,7 @@ a {
     z-index: 10;
     text-align: center;
     color: ghostwhite;
-    background-color: #11100e8e ;
+    background-color: #11100e8e;
     backdrop-filter: blur(20px);
 
     .site-nav {
@@ -81,7 +93,8 @@ a {
         .site-titulo {
             font-size: 1.8vw;
             font-weight: 700;
-            letter-spacing: -1px;
+            font-family: var(--second-font);
+            letter-spacing: 1px;
             color: var(--color-primary);
             mix-blend-mode: difference
         }
@@ -129,7 +142,24 @@ a {
                     font-style: italic;
                 }
             }
+        }
+    }
 
+    /* sessao imagem */
+    .sessao-img {
+        .cover {
+            position: relative;
+            height: 120vh;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: -8%;
+                left: 0;
+                clip-path: circle(20% at 50% 50%);
+            }
         }
     }
 }

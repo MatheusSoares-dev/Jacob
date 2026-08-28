@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 gsap.fromTo("#titulo", {
     scale: 3,
-    y: -190,
+    y: -195,
 
 }, {
     scale: 1,
@@ -23,9 +23,9 @@ const discoverTl = gsap.timeline({
     scrollTrigger: {
         trigger: ".slide",
         scrub: 2,
-        start: "center 50%",
+        start: "50% 35%",
+        end: "100% ",
         ease: "ease",
-        markers: true
     }
 })
 
@@ -43,4 +43,22 @@ discoverTl.to(".slideText3", {
 
 discoverTl.to(".slideText4", {
     y: 250
+})
+
+gsap.to("#ternos-img",{
+    clipPath: "circle(100% at 50% 50%)",
+
+    scrollTrigger: {
+        trigger: "#sessao-img > .conteiner",
+        start: "top top",
+        end: "150% bottom",
+        pin: true,
+        scrub: 2,
+        onEnter: () => {
+            document.body.classList.add("dark-theme")
+        },
+        onLeaveBack: () => {
+            document.body.classList.remove("dark-theme")
+        }
+    }
 })
