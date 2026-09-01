@@ -59,8 +59,8 @@ a {
     width: 100%;
     z-index: 10;
     text-align: center;
-    color: ghostwhite;
-    background-color: #11100e8e;
+    color: var(--color-primary);
+    background-color: var(--bg-primary-color);
     backdrop-filter: blur(20px);
 
     .site-nav {
@@ -96,7 +96,6 @@ a {
             font-family: var(--second-font);
             letter-spacing: 1px;
             color: var(--color-primary);
-            mix-blend-mode: difference
         }
 
         .copy-right {
