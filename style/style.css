@@ -62,6 +62,7 @@ a {
     color: var(--color-primary);
     background-color: var(--bg-primary-color);
     backdrop-filter: blur(20px);
+    transition: all 2s;
 
     .site-nav {
         display: flex;
@@ -160,5 +161,68 @@ a {
                 clip-path: circle(20% at 50% 50%);
             }
         }
+    }
+}
+
+.conteudo-rolagem {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: max-content;
+    height: 100vh;
+    
+}
+
+.largura {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.traje-card {
+    position: relative;
+    width: 60vw;
+    padding-top: 8rem;
+    flex-shrink: 0;
+}
+
+.conteiner-img {
+    z-index: -1;
+    img {
+        width: 100%;
+        display: block;
+    }
+
+}
+
+.card {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    padding: 1rem 1px;
+    height: 40%;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 20px 20px 0 0;
+    color: ghostwhite;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    transition: all 1.5s ease-in-out;
+    overflow: hidden;
+}
+
+
+.traje-card:hover {
+    .card {
+        height: 15%;
     }
 }

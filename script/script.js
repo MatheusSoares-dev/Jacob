@@ -45,7 +45,7 @@ discoverTl.to(".slideText4", {
     y: 250
 })
 
-gsap.to("#ternos-img",{
+gsap.to("#ternos-img", {
     clipPath: "circle(100% at 50% 50%)",
 
     scrollTrigger: {
@@ -62,3 +62,23 @@ gsap.to("#ternos-img",{
         }
     }
 })
+
+const conteudo = document.querySelector(".conteudo");
+
+const quantidadeScroll = () => {
+    return conteudo.scrollWidth - window.innerWidth;
+};
+
+gsap.to(conteudo, {
+    x: () => -quantidadeScroll(),
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".conteudo-rolagem",
+        start: "top top",
+        end: () => "+=" + quantidadeScroll(),
+        scrub: 1,
+        pin: true,
+        invalidateOnRefresh: true
+    }
+});
+
