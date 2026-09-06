@@ -82,3 +82,79 @@ gsap.to(conteudo, {
     }
 });
 
+
+const gridWrapper = gsap.utils.toArray(".grid-itens")
+
+gridWrapper.forEach(wrapper => {
+    const caixas = wrapper.querySelectorAll(".box")
+
+    caixas.forEach(box => {
+        gsap.from(box, {
+            y: 500,
+            duration: .5,
+            scrollTrigger: {
+                trigger: box,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 4
+            }
+        })
+    })
+});
+
+const titulo = document.querySelector(".servicos-titulo h2")
+const nomes = gsap.utils.toArray(".grid-img")
+
+let tl_h2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#servicos-sessao > .conteiner",
+        start: "top 50%",
+        end: "top 50%",
+        scrub: 2,
+        ease: "ease",
+
+        onEnter: () => {
+            gsap.set(titulo, {
+                position: "fixed",
+                bottom: 0,
+                zIndex: -1000
+            })
+        },
+
+        onEnterBack: () => {
+            gsap.set(titulo, {
+                position: "relative",
+                bottom: "0"
+            })
+        }
+}
+    })
+
+
+nomes.forEach((sessao, i) => {
+    ScrollTrigger.create({
+        trigger: sessao,
+        start: "bottom-=20% bottom",
+        end: "bottom top",
+        onEnter: () => {
+            updateTitulo(i)
+            if (i === 0) {
+                document.body.classList.remove("dark-theme")
+            }
+        },
+        onEnterBack: () => {
+            updateTitulo(i)
+            if (i === 0) {
+                document.body.classList.add("dark-theme")
+            }
+        }
+    })
+});
+
+
+function updateTitulo(index) {
+    const textTitulo = ["Criação", "Broche", "Gravata", "Acessorio"]
+    titulo.textContent = textTitulo[index]
+}
+
+updateTitulo(0)
